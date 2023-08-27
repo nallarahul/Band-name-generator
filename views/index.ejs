@@ -1,0 +1,81 @@
+<!-- Step 3 Add Header -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Add the link to the CSS stylesheet here -->
+  <!-- Hint: the link is relative to the public folder -->
+  <title>Band Generator</title>
+</head>
+
+<body>
+  <main>
+
+<!-- Step 2 - If an adjective and noun are sent to this ejs file, 
+    Change the h1 to show the adjective and noun.
+    But when the user first goes on the website and there is no adjective and noun, 
+    Show the default h1 below -->
+    <%if(locals.adjective && locals.noun){%>
+      <h1><%= adjective%><%= noun%></h1>
+    <%}else{%>
+      <h1>Welcome to Band-generator ✌🏻</h1>
+    <%}%>
+
+<form action="/submit" method="POST">
+  <input type="submit" value="Generate Name">
+</form>
+<!-- Step 3 Add Footer -->
+</main>
+
+<footer>
+  <!-- Step 4 - Add a dynamic year to the footer using JS. -->
+  <p>Copyright © <%= new Date().getFullYear() %></p>
+</footer>
+<style>
+  body {
+  background: #222;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  color: hotpink;
+}
+
+main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  font-size: 0.9rem;
+  background: #888;
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+</style>
+</body>
+
+</html>
